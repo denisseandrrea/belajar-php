@@ -28,7 +28,7 @@ if (isset($_POST['submit'])){
     if (mysqli_query($con, $sql)) {
         echo "Data berhasil ditambahkan";
     } else {
-        echo "Terdapat kesalahan". mysqli_error();
+        echo "Terdapat kesalahan". mysqli_error($con);
     }
           
     mysqli_close($con);
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])){
     <title>Insert</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="insert.php" method="post">
         NIM: <input type="text" name="nim"><br>
         Nama: <input type="text" name="nama"><br>
         ID Jurusan: <input type="number" name="id_jurusan"><br>
